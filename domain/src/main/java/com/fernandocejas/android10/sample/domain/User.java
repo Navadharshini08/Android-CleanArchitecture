@@ -1,78 +1,69 @@
-/**
- * Copyright (C) 2015 Fernando Cejas Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-package com.fernandocejas.android10.sample.domain;
-
-/**
- * Class that represents a User in the domain layer.
- */
 public class User {
 
-  private final int userId;
+    private final int userId;      // Final to ensure immutability
+    private String coverUrl;
+    private String fullName;
+    private String email;
+    private String description;
+    private int followers;
 
-  public User(int userId) {
-    this.userId = userId;
-  }
+    // Constructor initializing userId only
+    public User(int userId) {
+        this.userId = userId;
+    }
 
-  private String coverUrl;
-  private String fullName;
-  private String email;
-  private String description;
-  private int followers;
+    // Overloaded constructor to initialize all fields
+    public User(int userId, String coverUrl, String fullName, String email, String description, int followers) {
+        this.userId = userId;
+        this.coverUrl = coverUrl;
+        this.fullName = fullName;
+        this.email = email;
+        this.description = description;
+        this.followers = followers;
+    }
 
-  public int getUserId() {
-    return userId;
-  }
+    // Getters and Setters for all fields
+    public int getUserId() {
+        return userId;
+    }
 
-  public String getCoverUrl() {
-    return coverUrl;
-  }
+    public String getCoverUrl() {
+        return coverUrl;
+    }
 
-  public void setCoverUrl(String coverUrl) {
-    this.coverUrl = coverUrl;
-  }
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
 
-  public String getFullName() {
-    return fullName;
-  }
+    public String getFullName() {
+        return fullName;
+    }
 
-  public void setFullName(String fullName) {
-    this.fullName = fullName;
-  }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-  public String getEmail() {
-    return email;
-  }
+    public String getEmail() {
+        return email;
+    }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  public String getDescription() {
-    return description;
-  }
+    public String getDescription() {
+        return description;
+    }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public int getFollowers() {
-    return followers;
-  }
+    public int getFollowers() {
+        return followers;
+    }
 
-  public void setFollowers(int followers) {
-    this.followers = followers;
-  }
+    public void setFollowers(int followers) {
+        this.followers = followers;
+    }
 }
